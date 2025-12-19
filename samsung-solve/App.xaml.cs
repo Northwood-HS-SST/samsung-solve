@@ -1,16 +1,17 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace samsung_solve;
-
-public partial class App : Application
+namespace samsung_solve
 {
-    public App()
+    public partial class App : Application
     {
-        InitializeComponent();
-    }
+        public App()
+        {
+            InitializeComponent();
+        }
 
-    protected override Window CreateWindow(IActivationState? activationState)
-    {
-        return new Window(new AppShell());
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new AppShell());
+        }
     }
 }
