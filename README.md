@@ -1,4 +1,4 @@
-# Server Backend
+# App Frontend
 
 ## How to Setup
 
