@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:testPage="clr-namespace:app_frontend.Pages.TestPage"
+             x:Class="app_frontend.TestPage"
+             x:DataType="testPage:TestPageViewModel">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label Text="{Binding StatusMessage}" />
+
+
+            <Button Text="Call Endpoint"
+                    Command="{Binding CallApiCommand}"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

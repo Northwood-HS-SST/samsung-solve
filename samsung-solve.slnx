@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="app-backend/app-backend.csproj" />
+  <Project Path="app-frontend/app-frontend.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="app-shared/app-shared.csproj" />
+</Solution>
