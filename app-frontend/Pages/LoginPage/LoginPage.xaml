@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_frontend.Pages.LoginPage.LoginPage"
+             xmlns:pages="clr-namespace:app_frontend.Pages.LoginPage"
+             x:DataType="pages:LoginPageViewModel"
+             >
+
+    <Grid VerticalOptions="FillAndExpand">
+
+        <VerticalStackLayout
+            VerticalOptions="Center"             
+            Padding="20">
+
+            <Image
+                Source="Images/appiconfg.png" Margin="0,50" Aspect="AspectFit" WidthRequest="250" BackgroundColor="Black"/>
+
+            <Label Text="Error: Could not login." x:Name="ErrorLabel" IsVisible="False" TextColor="Red" FontAttributes="Bold" FontSize="Medium" Margin="0,0,0,25"/>
+
+
+            <Label Text="Email" x:Name="EmailLabel" FontAttributes="Bold"/>
+            <Entry x:Name="EmailBox"
+                   Placeholder="Enter Email"
+                   ClearButtonVisibility="WhileEditing"
+                   TextChanged="EmailBox_OnTextChanged"
+                   Margin="0,10"
+                   Keyboard="Email"
+                   />
+
+            <Label Text="Password" x:Name="PassLabel" FontAttributes="Bold"/>
+            <Entry x:Name="PassBox"
+                   Placeholder="Enter Password"
+                   ClearButtonVisibility="WhileEditing"
+                   IsPassword="True"
+                   TextChanged="PassBox_OnTextChanged"
+                   Margin="0,10"
+            />
+
+            <Button 
+                x:Name="LoginButton"
+                Text="Log In"
+                Clicked="LoginButton_OnClicked"
+                IsEnabled="False"
+                Margin="0,25,0,0"
+                    />
+            <ActivityIndicator x:Name="LoginActivity" IsRunning="False" Margin="0,50,0,0" />
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -6,3 +6,7 @@ riderModule.iml
 /.idea
 /.vs
 /samsung-solve/.vs
+
+*.csproj.user
+app-frontend/app-frontend.csproj.user
+*.user

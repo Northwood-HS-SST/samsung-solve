@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="app_frontend.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:app_frontend"
+    xmlns:loginPage="clr-namespace:app_frontend.Pages.LoginPage"
+    xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+    xmlns:searchPage="clr-namespace:app_frontend.Pages.SearchPage"
+    xmlns:profilePage="clr-namespace:app_frontend.Pages.ProfilePage"
+    Title="app_frontend"
+    Shell.NavBarIsVisible="False">
+
+
+    <TabBar >
+        <!-- Each Tab is an individual tab item in the bottom bar -->
+        <Tab Title="Search" Icon="{mi:MaterialRounded Search}">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate searchPage:SearchPage}"
+                Route="MainPage" />
+        </Tab>
+
+        
+        <Tab Title="Profile" Icon="{mi:MaterialRounded Person}">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate profilePage:ProfilePage}"
+                Route="MainPage" />
+        </Tab>
+
+        <!--<Tab Title="Settings" Icon="{mi:MaterialRounded Settings}" >
+            <ShellContent ContentTemplate="{DataTemplate homePage:HomePage}" />
+        </Tab>-->
+
+    </TabBar>
+
+
+</Shell>

@@ -1,7 +1,10 @@
-﻿using app_backend.Services.Interfaces;
+﻿using System.Net;
+using app_backend.Services.Interfaces;
 using System.Net.Http.Json;
 using app_backend.DTOs;
 using Microsoft.Maui.Storage;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace app_backend.Services.Classes;
 
@@ -15,7 +18,7 @@ public class AuthService : IAuthService
         _httpClient = httpClient;
     }
 
-    public async Task<LoginResponseDto> LoginAsync(LoginRequestDto request)
+    public async Task<(LoginResponseDto response, string error)> LoginAsync(LoginRequestDto request)
     {
         try
         {
@@ -23,9 +26,16 @@ public class AuthService : IAuthService
 
             if (!response.IsSuccessStatusCode)
             {
-                var error = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Login failed: {error}");
-                return null;
+                var error = JObject.Parse(await response.Content.ReadAsStringAsync());
+
+                string detail = "Unknown error: " + response.StatusCode.ToString();
+                if (response.StatusCode == HttpStatusCode.BadRequest || response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    detail = error["detail"].ToString();
+                }
+
+
+                return (null, detail);
             }
 
             var content = response.Content;
@@ -38,12 +48,12 @@ public class AuthService : IAuthService
                 await SecureStorage.SetAsync(TokenKey, result.token);
             }
 
-            return result;
+            return (result, "");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Login error: {ex.Message}");
-            return null;
+            return (null, ex.Message);
         }
     }
 

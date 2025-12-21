@@ -1,6 +1,9 @@
 ﻿using app_backend.Services.Classes;
 using app_backend.Services.Interfaces;
-using app_frontend.Pages.TestPage;
+using app_frontend.Pages.LoginPage;
+using app_frontend.Pages.ProfilePage;
+using app_frontend.Pages.SearchPage;
+using MauiIcons.Material.Rounded;
 using Microsoft.Extensions.Logging;
 
 namespace app_frontend
@@ -9,6 +12,8 @@ namespace app_frontend
     {
         public static MauiApp CreateMauiApp()
         {
+            SecureStorage.RemoveAll();
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
@@ -16,13 +21,10 @@ namespace app_frontend
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                })
+                .UseMaterialRoundedMauiIcons();
 
-            string apiEndpoint = "https://web-production-eca0f.up.railway.app/";
-
-#if DEBUG
-            apiEndpoint = "http://localhost:8000";   
-#endif
+            var apiEndpoint = "http://localhost:8000";
 
             builder.Services.AddSingleton(sp => new HttpClient
             {
@@ -31,8 +33,16 @@ namespace app_frontend
             });
 
             builder.Services.AddSingleton<AuthService>();
-            builder.Services.AddTransient<TestPageViewModel>();
-            builder.Services.AddTransient<TestPage>();
+
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<LoginPageViewModel>();
+
+            builder.Services.AddTransient<SearchPage>();
+            builder.Services.AddTransient<SearchPageViewModel>();
+
+            builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddTransient<ProfilePageViewModel>();
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

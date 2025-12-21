@@ -40,7 +40,6 @@
 
     [For information on how to test mobile deployments in JetBrains Rider, see the website.](https://www.jetbrains.com/guide/dotnet/tutorials/maui-development/install-maui/)
 
-### 3. Usage
+### Usage
 
 Usage is simple, but the server backend MUST be running if you are attempting to interact with the API endpoints.
-
