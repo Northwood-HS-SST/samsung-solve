@@ -22,7 +22,7 @@ public class AuthService : IAuthService
     {
         try
         {
-            var response = await _httpClient.PostAsJsonAsync("/api/auth/login", request);
+            var response = await _httpClient.PostAsJsonAsync("/api/auth/login", request).ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -84,7 +84,7 @@ public class AuthService : IAuthService
     {
         try
         {
-            return await SecureStorage.GetAsync(TokenKey);
+            return await SecureStorage.GetAsync(TokenKey).ConfigureAwait(false);
         }
         catch
         {

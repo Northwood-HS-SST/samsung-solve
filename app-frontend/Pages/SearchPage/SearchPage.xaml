@@ -9,18 +9,15 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-        <SearchBar Grid.Row="0" Placeholder="Search..." Margin="0,0,0,0" />
-
-        <HorizontalStackLayout Grid.Row="1" Margin="20,0,20,10">
-            <Picker Title="Sport" x:Name="SportPicker"/>
-            <Picker Title="Position" x:Name="PositionPicker"/>
+        
+        <HorizontalStackLayout Grid.Row="0" Margin="20,0,20,10">
+            <Picker Title="Sport" x:Name="SportPicker" SelectedIndexChanged="SportPicker_OnSelectedIndexChanged"/>
+            <Picker Title="Position" x:Name="PositionPicker" SelectedIndexChanged="PositionPicker_OnSelectedIndexChanged"/>
         </HorizontalStackLayout>
 
-        <RefreshView Grid.Row="2"  IsRefreshing="{Binding IsRefreshing}"
+        <RefreshView Grid.Row="1"  IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding RefreshCommand}">
             <CollectionView 
                         ItemsSource="{Binding AvailableEntries}"
@@ -29,7 +26,7 @@
                         Margin="20,0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="searchPage:SearchPageViewModel+SearchResult">
-                        <Grid Padding="15,20" BackgroundColor="#40000000">
+                        <Grid Padding="15,20" BackgroundColor="#05000000">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />

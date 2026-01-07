@@ -3,13 +3,14 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using app_backend.Services.Interfaces;
 using app_frontend.Pages.SearchPage;
 
 namespace app_frontend.Pages.ProfilePage
 {
     public partial class ProfilePageViewModel : ObservableObject
     {
-        private readonly AuthService _apiService;
+        private readonly IAuthService _apiService;
 
 
         [ObservableProperty]
@@ -17,7 +18,7 @@ namespace app_frontend.Pages.ProfilePage
         public ObservableCollection<SearchPageViewModel.SearchResult> PastEntries { get; set; } =
             new ObservableCollection<SearchPageViewModel.SearchResult>();
 
-        public ProfilePageViewModel(AuthService apiService)
+        public ProfilePageViewModel(IAuthService apiService)
         {
             _apiService = apiService;
 

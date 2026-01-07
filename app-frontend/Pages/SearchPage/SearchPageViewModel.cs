@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using app_backend.DTOs;
 using app_backend.Services.Classes;
+using app_backend.Services.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -8,7 +9,7 @@ namespace app_frontend.Pages.SearchPage
 {
     public partial class SearchPageViewModel : ObservableObject
     {
-        private readonly AuthService _apiService;
+        private readonly IAuthService _apiService;
 
         [ObservableProperty]
         private bool _isRefreshing = false;
@@ -22,7 +23,7 @@ namespace app_frontend.Pages.SearchPage
         public ObservableCollection<SearchResult> AvailableEntries { get; set; } =
             new ObservableCollection<SearchResult>();
 
-        public SearchPageViewModel(AuthService apiService)
+        public SearchPageViewModel(IAuthService apiService)
         {
             _apiService = apiService;
 
@@ -32,7 +33,7 @@ namespace app_frontend.Pages.SearchPage
 
 
         [RelayCommand]
-        private async Task Refresh()
+        public async Task Refresh()
         {
             // fake buffering
             IsRefreshing = true;

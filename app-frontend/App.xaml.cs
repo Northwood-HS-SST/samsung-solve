@@ -1,4 +1,6 @@
-﻿using app_backend.Services.Classes;
+﻿using app_backend.DTOs;
+using app_backend.Services.Classes;
+using app_backend.Services.Interfaces;
 using app_frontend.Pages.LoginPage;
 using app_frontend.Pages.SearchPage;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,15 +23,18 @@ namespace app_frontend
             return new Window(new AppShell());
         }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
             base.OnStart();
             try
             {
-                var authService = IPlatformApplication.Current.Services.GetService<AuthService>();
-                var authToken = await authService.GetTokenAsync();
+                var authService = IPlatformApplication.Current.Services.GetService<IAuthService>();
 
-                if (!string.IsNullOrEmpty(authToken))
+                authService.LoginAsync(new LoginRequestDto { email = "user@example.com",password = "string" }).GetAwaiter().GetResult();
+
+                var authToken = authService.GetTokenAsync();
+
+                if (!string.IsNullOrEmpty(authToken.Result))
                 {
                     // Optionally validate token with an API call
                     bool isAuthenticated = true;

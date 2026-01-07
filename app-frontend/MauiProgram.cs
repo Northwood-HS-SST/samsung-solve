@@ -12,8 +12,6 @@ namespace app_frontend
     {
         public static MauiApp CreateMauiApp()
         {
-            SecureStorage.RemoveAll();
-
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
@@ -24,7 +22,9 @@ namespace app_frontend
                 })
                 .UseMaterialRoundedMauiIcons();
 
-            var apiEndpoint = "http://localhost:8000";
+            var apiEndpoint = DeviceInfo.Platform == DevicePlatform.Android
+                ? "http://10.0.2.2:8000"  // Android emulator special IP
+                : "http://localhost:8000"; // iOS simulator or physical device on same network
 
             builder.Services.AddSingleton(sp => new HttpClient
             {
@@ -32,7 +32,11 @@ namespace app_frontend
                 Timeout = TimeSpan.FromSeconds(30)
             });
 
-            builder.Services.AddSingleton<AuthService>();
+            builder.Services.AddSingleton<IAuthService, AuthService>();
+            builder.Services.AddSingleton<IUserService, UserService>();
+
+
+            builder.Services.AddSingleton<AppShell>();
 
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<LoginPageViewModel>();
