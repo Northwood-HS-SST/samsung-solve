@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:searchPage="clr-namespace:app_frontend.Pages.SearchPage"
+             x:Class="app_frontend.Pages.SearchPage.SearchPage"
+             x:DataType="searchPage:SearchPageViewModel"
+             Title="Search Page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <HorizontalStackLayout Grid.Row="0" Margin="20,0,20,10">
+            <Picker Title="Sport" x:Name="SportPicker" SelectedIndexChanged="SportPicker_OnSelectedIndexChanged"/>
+            <Picker Title="Position" x:Name="PositionPicker" SelectedIndexChanged="PositionPicker_OnSelectedIndexChanged"/>
+        </HorizontalStackLayout>
+
+        <RefreshView Grid.Row="1"  IsRefreshing="{Binding IsRefreshing}"
+                     Command="{Binding RefreshCommand}">
+            <CollectionView 
+                        ItemsSource="{Binding AvailableEntries}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnItemSelected"
+                        Margin="20,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="searchPage:SearchPageViewModel+SearchResult">
+                        <Grid Padding="15,20" BackgroundColor="#05000000">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.RowSpan="3" StrokeShape="RoundRectangle 5">
+                                <Image 
+                                Source="{Binding ImageUrl}"
+                                Aspect="AspectFill"
+                                HeightRequest="75"
+                                WidthRequest="75"/>
+                            </Border>
+                            <Label Grid.Column="1"
+                               Text="{Binding Name}"
+                               FontAttributes="Bold" 
+                               Margin="0 0 0 10"
+                               FontSize="Large"
+                        />
+                            <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="Test Location"
+                               FontAttributes="Italic"
+                               Margin="0 0 0 10"
+                               TextColor="Gray"
+                        />
+                            <Label Grid.Row="2"
+                                   Grid.Column="1"
+                                   Text="Needs $Position"
+                                   FontAttributes="Italic, Bold"
+                                   Margin="0 0 0 10"
+                                   FontSize="16"
+                                   TextColor="DimGray"
+                            />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+
+</ContentPage>
