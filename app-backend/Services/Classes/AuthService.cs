@@ -20,6 +20,10 @@ public class AuthService : IAuthService
 
     public async Task<(LoginResponseDto response, string error)> LoginAsync(LoginRequestDto request)
     {
+
+
+        return (new LoginResponseDto{token = "", user =UserDto.GetFake()}, "");
+
         try
         {
             var response = await _httpClient.PostAsJsonAsync("/api/auth/login", request).ConfigureAwait(false);
@@ -59,7 +63,9 @@ public class AuthService : IAuthService
 
     public async Task<UserDto> RegisterAsync(RegisterRequestDto request)
     {
-        try
+        
+        return UserDto.GetFake();
+            try
         {
             var response = await _httpClient.PostAsJsonAsync("/api/auth/register", request);
 
@@ -82,6 +88,7 @@ public class AuthService : IAuthService
 
     public async Task<string> GetTokenAsync()
     {
+        return "fake";
         try
         {
             return await SecureStorage.GetAsync(TokenKey).ConfigureAwait(false);
@@ -100,6 +107,7 @@ public class AuthService : IAuthService
 
     public async Task<bool> IsAuthenticatedAsync()
     {
+        return true;
         var token = await GetTokenAsync();
         return !string.IsNullOrEmpty(token);
     }

@@ -34,6 +34,7 @@ public class UserService : IUserService
 
     public async Task<UserDto> GetCurrentUserAsync()
     {
+        return UserDto.GetFake();
         try
         {
             await AddAuthHeaderAsync();
@@ -59,7 +60,8 @@ public class UserService : IUserService
 
     public async Task<UserDto> UpdateCurrentUserAsync(UserUpdateDto update)
     {
-        try
+        return UserDto.GetFake();
+            try
         {
             await AddAuthHeaderAsync();
 
