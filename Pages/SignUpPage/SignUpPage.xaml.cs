@@ -1,5 +1,7 @@
 ﻿namespace app_frontend.Pages.SignUpPage;
 using app_frontend.Pages.AthleteSignupPage;
+using app_frontend.Pages.GuardianSignUpPage;
+using app_frontend.Pages.CoachSignUpPage;
 public partial class SignUpPage : ContentPage
 {
     public SignUpPage()
@@ -20,13 +22,13 @@ public partial class SignUpPage : ContentPage
         }
     }
 
-    private void ParentGuardianButton_OnClicked(object? sender, EventArgs e)
+    private async void ParentGuardianButton_OnClicked(object? sender, EventArgs e)
     {
-        throw new NotImplementedException();
+       await Navigation.PushAsync(new GuardianSignUpPage());
     }
 
-    private void CoachOrgButton_OnClicked(object? sender, EventArgs e)
+    private async void CoachOrgButton_OnClicked(object? sender, EventArgs e)
     {
-        throw new NotImplementedException();
+       await Navigation.PushAsync(new CoachSignUpPage());
     }
 }

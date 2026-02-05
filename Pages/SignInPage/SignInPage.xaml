@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_frontend.Pages.SignInPage.SignInPage">
+<VerticalStackLayout
+        Spacing="0"
+        Padding="10"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Label
+            Text="HerPlay"
+            FontSize="64"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"/>
+        
+        <Label
+            Text="Sign In"
+            FontSize="48"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,40" />
+        
+        <Label
+            Text="Email"
+            FontSize="20"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10" />
+        
+        <Entry
+            x:Name="EmailEntry"
+            BackgroundColor="#4b8e8b"
+            TextColor="White"
+            FontFamily = "KohSantepheapRegular"
+            FontSize="20"
+            WidthRequest="450"
+            HeightRequest="35"
+            HorizontalOptions="Center"
+            TextChanged="EmailEntry_OnTextChanged"
+            Margin="0,0,0,20"/>
+        
+        <Label
+            Text="Password" 
+            FontSize="20"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10" />
+        
+        <Entry
+            x:Name ="PasswordEntry"
+            IsPassword="True"
+            BackgroundColor="#4b8e8b"
+            TextColor="White"
+            FontFamily = "KohSantepheapRegular"
+            FontSize="20"
+            WidthRequest="450"
+            HeightRequest="35"
+            HorizontalOptions="Center"
+            TextChanged="PasswordEntry_OnTextChanged"
+            Margin="0,0,0,40"/>
+        
+        <Button
+            Text = "Sign In"
+            Clicked="SignInButton_OnClicked"
+            FontFamily = "KohSantepheapRegular"
+            BackgroundColor="#6EA6A3"
+            TextColor="White"
+            FontSize="20"
+            WidthRequest="450"
+            HeightRequest="35"
+            CornerRadius="0"
+            HorizontalOptions="Center">
+        </Button> 
+        
+        <Button
+            Text = "Forgot Password?"
+            Clicked="ForgotPasswordButton_OnClicked"
+            FontFamily = "KohSantepheapRegular"
+            BackgroundColor="Transparent"
+            TextColor="#6EA6A3"
+            FontSize="18"
+            HorizontalOptions="Center"  
+            ></Button>
+    </VerticalStackLayout>
+</ContentPage>

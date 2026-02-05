@@ -9,14 +9,32 @@ public partial class CoachSignUpPage : ContentPage
         InitializeComponent();
     }
 
+    private string firstName;
+    private string lastName;
+    private string zipcode;
+    private string teamInfo;
+    private string email;
+    
     private void SaveData()
     {
         // do with this what you will
-        string firstName = FirstNameEntry.Text;
-        string lastName = LastNameEntry.Text;
-        string zipcode = ZipcodeEntry.Text;
-        string teamInfo = TeamInfoEntry.Text;
-        string email = EmailEntry.Text;
+        firstName = FirstNameEntry.Text;
+        lastName = LastNameEntry.Text;
+        zipcode = ZipcodeEntry.Text;
+        teamInfo = TeamInfoEntry.Text;
+        email = EmailEntry.Text;
+        checkIfDone();
+    }
+    
+    private async void checkIfDone()
+    {
+       if(!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) &&
+          !string.IsNullOrEmpty(zipcode) && !string.IsNullOrEmpty(teamInfo) && 
+          !string.IsNullOrEmpty(email))
+       {
+           await Navigation.PushAsync(new CoachSignUpPage2.CoachSignUpPage2());
+       }
+   
     }
 
     private void FirstNameEntry_OnTextChanged(object? sender, TextChangedEventArgs e)

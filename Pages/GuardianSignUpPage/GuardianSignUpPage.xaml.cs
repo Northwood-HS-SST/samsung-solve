@@ -37,26 +37,26 @@ public partial class GuardianSignUpPage : ContentPage
     }
     private void FirstNameEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
-        throw new NotImplementedException();
+        SaveData();
     }
 
     private void LastNameEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
-        throw new NotImplementedException();
+        SaveData();
     }
 
     private void ZipcodeEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
-        throw new NotImplementedException();
+        SaveData();
     }
 
     private void EmailEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
-        throw new NotImplementedException();
+        SaveData();
     }
 
     private void PhoneNumberEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
-        throw new NotImplementedException();
+        SaveData();
     }
 }

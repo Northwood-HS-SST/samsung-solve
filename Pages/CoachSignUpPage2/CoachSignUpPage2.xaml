@@ -2,8 +2,8 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="app_frontend.Pages.CoachSignUpPage.CoachSignUpPage">
-    <VerticalStackLayout
+             x:Class="app_frontend.Pages.CoachSignUpPage2.CoachSignUpPage2">
+       <VerticalStackLayout
         Spacing="0"
         Padding="10"
         VerticalOptions="Center"
@@ -29,19 +29,19 @@
             Margin="0,10,0,10"
             Spacing="5">
             <Label
-                Text="First Name"
+                Text="Team Name"
                 FontFamily="KohSantepheapRegular"
                 FontSize="20"
                 TextColor="#4b8e8b"
                 HorizontalOptions="Start"/>
             <Entry
-                x:Name="FirstNameEntry"
+                x:Name="TeamNameEntry"
                 Placeholder=""
                 TextColor="White"
                 BackgroundColor="#4b8e8b"
                 WidthRequest="625"
                 HeightRequest="55"
-                TextChanged="FirstNameEntry_OnTextChanged">
+                TextChanged="TeamNameEntry_OnTextChanged">
                 <Entry.Shadow>
                     <Shadow Brush="Black"
                             Offset="3,3"
@@ -55,19 +55,19 @@
             Margin="0,10,0,10"
             Spacing="5">
             <Label
-                Text="Last Name"
+                Text="Position Needed"
                 FontFamily="KohSantepheapRegular"
                 FontSize="20"
                 TextColor="#4b8e8b"
                 HorizontalOptions="Start"/>
             <Entry
-                x:Name="LastNameEntry"
+                x:Name="PositionNeededEntry"
                 Placeholder=""
                 TextColor="White"
                 BackgroundColor="#4b8e8b"
                 WidthRequest="625"
                 HeightRequest="55"
-                TextChanged="LastNameEntry_OnTextChanged">
+                TextChanged="PositionNeededEntry_OnTextChanged">
                 <Entry.Shadow>
                     <Shadow Brush="Black"
                             Offset="3,3"
@@ -81,19 +81,19 @@
             Margin="0,10,0,10"
             Spacing="5">
             <Label
-                Text="Zipcode"
+                Text="Time Available"
                 FontFamily="KohSantepheapRegular"
                 FontSize="20"
                 TextColor="#4b8e8b"
                 HorizontalOptions="Start"/>
             <Entry
-                x:Name="ZipcodeEntry"
+                x:Name="TimeEntry"
                 Placeholder=""
                 TextColor="White"
                 BackgroundColor="#4b8e8b"
                 WidthRequest="625"
                 HeightRequest="55"
-                TextChanged="ZipcodeEntry_OnTextChanged">
+                TextChanged="TimeEntry_OnTextChanged">
                 <Entry.Shadow>
                     <Shadow Brush="Black"
                             Offset="3,3"
@@ -103,56 +103,5 @@
             </Entry>
         </VerticalStackLayout>
         
-        <VerticalStackLayout
-            Margin="0,10,0,10"
-            Spacing="5">
-            <Label
-                Text="Email"
-                FontFamily="KohSantepheapRegular"
-                FontSize="20"
-                TextColor="#4b8e8b"
-                HorizontalOptions="Start"/>
-            <Entry
-                x:Name="EmailEntry"
-                Placeholder=""
-                TextColor="White"
-                BackgroundColor="#4b8e8b"
-                WidthRequest="625"
-                HeightRequest="55"
-                TextChanged="EmailEntry_OnTextChanged">
-                <Entry.Shadow>
-                    <Shadow Brush="Black"
-                            Offset="3,3"
-                            Radius="8"
-                            Opacity="0.3" />
-                </Entry.Shadow>
-            </Entry>
-        </VerticalStackLayout>
-        
-        <VerticalStackLayout
-            Margin="0,10,0,10"
-            Spacing="5">
-            <Label
-                Text="Team Info"
-                FontFamily="KohSantepheapRegular"
-                FontSize="20"
-                TextColor="#4b8e8b"
-                HorizontalOptions="Start"/>
-            <Entry
-                x:Name="TeamInfoEntry"
-                Placeholder=""
-                TextColor="White"
-                BackgroundColor="#4b8e8b"
-                WidthRequest="625"
-                HeightRequest="55"
-                TextChanged="TeamInfoEntry_OnTextChanged">
-                <Entry.Shadow>
-                    <Shadow Brush="Black"
-                            Offset="3,3"
-                            Radius="8"
-                            Opacity="0.3" />
-                </Entry.Shadow>
-            </Entry>
-        </VerticalStackLayout>
-    </VerticalStackLayout>
+    </VerticalStackLayout> 
 </ContentPage>
