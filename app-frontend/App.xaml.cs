@@ -42,8 +42,8 @@ namespace app_frontend
                     if (isAuthenticated)
                     {
                         // User is already logged in, navigate to main page/shell
-                        MainPage = _serviceProvider.GetRequiredService<AppShell>();
-                        return;
+                        //MainPage = _serviceProvider.GetRequiredService<AppShell>();
+                        //return;
                     }
                 }
             }
