@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:app_frontend"
     xmlns:loginPage="clr-namespace:app_frontend.Pages.LoginPage"
     xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
-    xmlns:searchPage="clr-namespace:app_frontend.Pages.SearchPage"
+    xmlns:homePage="clr-namespace:app_frontend.Pages.HomePage"
     xmlns:profilePage="clr-namespace:app_frontend.Pages.ProfilePage"
     Title="app_frontend"
     Shell.NavBarIsVisible="False">
@@ -14,24 +14,33 @@
 
     <TabBar >
         <!-- Each Tab is an individual tab item in the bottom bar -->
-        <Tab Title="Search" Icon="{mi:MaterialRounded Search}">
+        <Tab Title="Home" Icon="{mi:MaterialRounded Home}">
             <ShellContent
                 Title="Home"
-                ContentTemplate="{DataTemplate searchPage:SearchPage}"
+                ContentTemplate="{DataTemplate homePage:HomePage}"
                 Route="MainPage" />
         </Tab>
 
-        
+        <Tab Title="Sport" Icon="{mi:MaterialRounded SportsBaseball}">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate homePage:HomePage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Message" Icon="{mi:MaterialRounded Message}">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate homePage:HomePage}"
+                Route="MainPage" />
+        </Tab>
+
         <Tab Title="Profile" Icon="{mi:MaterialRounded Person}">
             <ShellContent
                 Title="Home"
                 ContentTemplate="{DataTemplate profilePage:ProfilePage}"
                 Route="MainPage" />
         </Tab>
-
-        <!--<Tab Title="Settings" Icon="{mi:MaterialRounded Settings}" >
-            <ShellContent ContentTemplate="{DataTemplate homePage:HomePage}" />
-        </Tab>-->
 
     </TabBar>
 

@@ -63,6 +63,7 @@
 	<ItemGroup>
 		<PackageReference Include="AathifMahir.Maui.MauiIcons.Material.Rounded" Version="5.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Humanizer" Version="3.0.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 	</ItemGroup>
@@ -73,8 +74,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\SearchPage\SearchPage.xaml.cs">
-	    <DependentUpon>SearchPage.xaml</DependentUpon>
+	  <Compile Update="Pages\HomePage\HomePage.xaml.cs">
+	    <DependentUpon>HomePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\UserInfoSignUpPage\UserInfoSignUpPage.xaml.cs">
+	    <DependentUpon>UserInfoSignUpPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Shells\AppShell.xaml.cs">
 	    <DependentUpon>AppShell.xaml</DependentUpon>
@@ -85,10 +89,13 @@
 	  <MauiXaml Update="Pages\ProfilePage\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\SearchPage\SearchPage.xaml">
+	  <MauiXaml Update="Pages\HomePage\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\LoginPage\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\UserInfoSignUpPage\UserInfoSignUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using app_backend.Services.Interfaces;
-using app_frontend.Pages.SearchPage;
+using app_frontend.Pages.HomePage;
 
 namespace app_frontend.Pages.ProfilePage
 {
@@ -15,8 +15,8 @@ namespace app_frontend.Pages.ProfilePage
 
         [ObservableProperty]
         private bool _isRefreshing = false;
-        public ObservableCollection<SearchPageViewModel.SearchResult> PastEntries { get; set; } =
-            new ObservableCollection<SearchPageViewModel.SearchResult>();
+        public ObservableCollection<HomePageViewModel.SearchResult> PastEntries { get; set; } =
+            new ObservableCollection<HomePageViewModel.SearchResult>();
 
         public ProfilePageViewModel(IAuthService apiService)
         {
@@ -31,14 +31,6 @@ namespace app_frontend.Pages.ProfilePage
             IsRefreshing = true;
             await Task.Delay(TimeSpan.FromSeconds(1));
             IsRefreshing = false;
-
-
-            PastEntries.Clear();
-
-            for (int i = 0; i < 10; i++)
-            {
-                PastEntries.Add(new SearchPageViewModel.SearchResult { Name = "Test Team", ImageUrl = "https://content.sportslogos.net/logos/7/153/full/baltimore_ravens_logo_primary_dark_19994944.png" });
-            }
         }
 
     }

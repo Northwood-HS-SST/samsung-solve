@@ -16,7 +16,9 @@ public partial class AthleteSignupPage : ContentPage
         
         private void SaveData()
         {
+            
             // do with this what you will
+            /*
             string firstName = FirstNameEntry.Text;
             string lastName = LastNameEntry.Text;
             string zipcode = ZipcodeEntry.Text;
@@ -24,8 +26,10 @@ public partial class AthleteSignupPage : ContentPage
             string sport = SportEntry.Text;
             string position = PositionPicker.SelectedItem?.ToString() ?? string.Empty;
             string email = EmailEntry.Text;
+            */
         }
         
+        /*
         private void SportEntry_TextChanged(object sender, TextChangedEventArgs e)
         {   
             SaveData();
@@ -34,7 +38,9 @@ public partial class AthleteSignupPage : ContentPage
                 populatePicker(e.NewTextValue);
             }
         }
+        */
 
+        /*
         private void populatePicker(string sport)
         {
             List<string> basketballPositions = new List<string> { "Point Guard", "Shooting Guard", "Small Forward", "Center", "Power Forward" };
@@ -59,7 +65,7 @@ public partial class AthleteSignupPage : ContentPage
                 PositionPicker.ItemsSource = softballPositions;
             }
         }
-
+        */
 
         private void FirstNameEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
         {
@@ -89,5 +95,15 @@ public partial class AthleteSignupPage : ContentPage
         private void EmailEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
         {
             SaveData();
+        }
+
+        private void PasswordEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private async void SignupButton_OnClicked(object? sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserInfoSignUpPage.UserInfoSignUpPage());
         }
     }

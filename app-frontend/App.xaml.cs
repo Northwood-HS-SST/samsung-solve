@@ -2,7 +2,6 @@
 using app_backend.Services.Classes;
 using app_backend.Services.Interfaces;
 using app_frontend.Pages.LoginPage;
-using app_frontend.Pages.SearchPage;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace app_frontend
@@ -42,8 +41,8 @@ namespace app_frontend
                     if (isAuthenticated)
                     {
                         // User is already logged in, navigate to main page/shell
-                        //MainPage = _serviceProvider.GetRequiredService<AppShell>();
-                        //return;
+                        MainPage = _serviceProvider.GetRequiredService<AppShell>();
+                        return;
                     }
                 }
             }

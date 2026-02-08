@@ -15,10 +15,12 @@ public partial class AthleteUnder13SignupPage : ContentPage
 
     private void SaveData()
     {
+        /*
         string fullName = FullNameEntry?.Text ?? string.Empty;
         string parentPhone = ParentPhoneNumberEntry?.Text ?? string.Empty;
         string parentEmail = ParentEmailEntry?.Text ?? string.Empty;
         // Save the data to a database or file
+        */
     }
 
     private void FullNameEntry_OnTextChanged(object sender, TextChangedEventArgs e)
@@ -34,5 +36,21 @@ public partial class AthleteUnder13SignupPage : ContentPage
     private void ParentEmailEntry_OnTextChanged(object sender, TextChangedEventArgs e)
     {
         SaveData();
+    }
+
+    private void FirstNameEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
+    {
+
+    }
+
+
+    private void LastNameEntry_OnTextChanged(object? sender, TextChangedEventArgs e)
+    {
+
+    }
+
+    private void SignupButton_OnClicked(object? sender, EventArgs e)
+    {
+
     }
 }

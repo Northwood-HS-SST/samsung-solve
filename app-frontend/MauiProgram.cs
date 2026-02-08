@@ -1,8 +1,8 @@
 ﻿using app_backend.Services.Classes;
 using app_backend.Services.Interfaces;
+using app_frontend.Pages.HomePage;
 using app_frontend.Pages.LoginPage;
 using app_frontend.Pages.ProfilePage;
-using app_frontend.Pages.SearchPage;
 using MauiIcons.Material.Rounded;
 using Microsoft.Extensions.Logging;
 
@@ -41,8 +41,8 @@ namespace app_frontend
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<LoginPageViewModel>();
 
-            builder.Services.AddTransient<SearchPage>();
-            builder.Services.AddTransient<SearchPageViewModel>();
+            builder.Services.AddTransient<HomePage>();
+            builder.Services.AddTransient<HomePageViewModel>();
 
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ProfilePageViewModel>();
