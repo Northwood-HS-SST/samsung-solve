@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_frontend.Pages.AthleteUnder13SignupPage.AthleteUnder13SignupPage">
+    <VerticalStackLayout
+        Spacing="10"
+        Padding="20"
+        VerticalOptions="Start"
+        >
+
+        <Label
+            Text="Athlete"
+            FontSize="64"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,-10" />
+
+        <Label
+            Text="Sign Up"
+            FontSize="48"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10" />
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Entry
+                x:Name="FirstNameEntry"
+                Placeholder="First Name"
+                PlaceholderColor="#81FFFFFF"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="FirstNameEntry_OnTextChanged"
+                >
+            </Entry>
+        </Border>
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Entry
+                x:Name="LastNameEntry"
+                Placeholder="Last Name"
+                PlaceholderColor="#81FFFFFF"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="LastNameEntry_OnTextChanged"
+            >
+            </Entry>
+        </Border>
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Entry
+                x:Name="PhoneNumberEntry"
+                Placeholder="Parent Phone #"
+                PlaceholderColor="#81FFFFFF"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="ParentPhoneNumberEntry_OnTextChanged"
+                Keyboard="Telephone"
+            >
+            </Entry>
+        </Border>
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Parent Email"
+                PlaceholderColor="#81FFFFFF"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="ParentEmailEntry_OnTextChanged"
+                Keyboard="Email"
+            >
+            </Entry>
+        </Border>
+
+        <Button
+            x:Name="SignupButton"
+            Text = "Sign Up"
+            FontSize="18"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="White"
+            BackgroundColor="#3F7875"
+            HorizontalOptions="Center"
+            Clicked="SignupButton_OnClicked"
+            CornerRadius="10"/>
+
+    </VerticalStackLayout>
+</ContentPage>

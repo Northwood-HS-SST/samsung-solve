@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_frontend.Pages.UserInfoSignUpPage.UserInfoSignUpPage">
+    <VerticalStackLayout
+        Spacing="10"
+        Padding="20"
+        VerticalOptions="Start">
+
+        <Label
+            Text="Athlete"
+            FontSize="64"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"/>
+        
+        <Label
+            Text="User Information"
+            FontSize="48"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,40" />
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Entry
+                x:Name="ZipcodeEntry"
+                Placeholder="Zipcode"
+                PlaceholderColor="#81FFFFFF"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                Keyboard="Numeric"
+            >
+            </Entry>
+        </Border>
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Grid>
+                <DatePicker
+                    x:Name="BirthdayPicker"
+                    MinimumDate="01/01/1900"
+                    MaximumDate="12/31/2026"
+                    TextColor="White"
+                    Format="MMMM dd, yyyy"
+                    />
+
+            </Grid>
+        </Border>
+
+        <BoxView HeightRequest="1" HorizontalOptions="Fill" Color="Gray" />
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Grid>
+                <Picker x:Name="SportPicker" Title="Pick a Sport" TitleColor="White" SelectedIndexChanged="SportPicker_OnSelectedIndexChanged">
+                    <Picker.ItemsSource >
+                        <x:Array Type="{x:Type x:String}">
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+            </Grid>
+        </Border>
+
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <Grid>
+                <Picker x:Name="PositionPicker" Title="Pick a Position" TitleColor="White" SelectedIndexChanged="SportPicker_OnSelectedIndexChanged" IsEnabled="False">
+                    <Picker.ItemsSource >
+                        <x:Array Type="{x:Type x:String}">
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+            </Grid>
+        </Border>
+
+        <Button
+            x:Name="ContinueButton"
+            Text = "Continue"
+            FontSize="18"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="White"
+            BackgroundColor="#3F7875"
+            HorizontalOptions="Center"
+            Clicked="ContinueButton_OnClicked"
+            CornerRadius="10"/>
+
+    </VerticalStackLayout>
+</ContentPage>

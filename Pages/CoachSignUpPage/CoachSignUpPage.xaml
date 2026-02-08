@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_frontend.Pages.CoachSignUpPage.CoachSignUpPage">
+    <VerticalStackLayout
+        Spacing="0"
+        Padding="10"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Label
+            Text="Coach/Org"
+            FontSize="64"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Text="Sign Up"
+            FontSize="48"
+            FontFamily = "KohSantepheapRegular"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,20"/>
+
+        <Label
+            Text="First Name"
+            FontFamily="KohSantepheapRegular"
+            FontSize="20"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10"/>
+        
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            Margin="0,0,0,20"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry
+                x:Name="FirstNameEntry"
+                Placeholder="First Name"
+                PlaceholderColor="White"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="FirstNameEntry_OnTextChanged" />
+        </Border>
+
+        <Label
+            Text="Last Name"
+            FontFamily="KohSantepheapRegular"
+            FontSize="20"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10"/>
+        
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            Margin="0,0,0,20"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry
+                x:Name="LastNameEntry"
+                Placeholder="Last Name"
+                PlaceholderColor="White"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="LastNameEntry_OnTextChanged" />
+        </Border>
+
+        <Label
+            Text="Zipcode"
+            FontFamily="KohSantepheapRegular"
+            FontSize="20"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10"/>
+        
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            Margin="0,0,0,20"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry
+                x:Name="ZipcodeEntry"
+                Placeholder="Zipcode"
+                PlaceholderColor="White"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="ZipcodeEntry_OnTextChanged"
+                Keyboard="Numeric" />
+        </Border>
+
+        <Label
+            Text="Email"
+            FontFamily="KohSantepheapRegular"
+            FontSize="20"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10"/>
+        
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            Margin="0,0,0,20"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Email"
+                PlaceholderColor="White"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="EmailEntry_OnTextChanged"
+                Keyboard="Email" />
+        </Border>
+
+        <Label
+            Text="Team Info"
+            FontFamily="KohSantepheapRegular"
+            FontSize="20"
+            TextColor="#4b8e8b"
+            HorizontalOptions="Center"
+            Margin="0,0,0,10"/>
+        
+        <Border
+            BackgroundColor="#4b8e8b"
+            StrokeThickness="0"
+            Padding="10,0"
+            Margin="0,0,0,20"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry
+                x:Name="TeamInfoEntry"
+                Placeholder="Team Info"
+                PlaceholderColor="White"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                TextChanged="TeamInfoEntry_OnTextChanged" />
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
